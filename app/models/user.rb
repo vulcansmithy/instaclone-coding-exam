@@ -12,4 +12,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :delete_all
 
   has_many  :friendship_requests
+
+  acts_as_follower
+  acts_as_followable
+  
 end

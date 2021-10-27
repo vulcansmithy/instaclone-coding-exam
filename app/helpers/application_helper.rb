@@ -13,4 +13,8 @@ module ApplicationHelper
     user.friendship_requests.where(aasm_state: "requested")
   end
 
+  def display_follower_count(user)
+    user.followers.count
+  end  
+
 end

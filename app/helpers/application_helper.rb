@@ -9,4 +9,8 @@ module ApplicationHelper
     end
   end 
 
+  def friend_request_list(user)
+    user.friendship_requests.where(aasm_state: "requested")
+  end
+
 end

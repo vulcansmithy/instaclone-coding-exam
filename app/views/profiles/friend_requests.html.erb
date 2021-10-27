@@ -1,0 +1,11 @@
+<div>
+  <h3><%= current_user.username %>'s Friend Requests</h3>
+
+  <% friend_request_list(current_user).each do |request| %>
+    <p> 
+      • 
+      <%= link_to request.requestor.username, profile_path(request.requestor.username) %> &nbsp; &nbsp; &nbsp; 
+      Accept | Decline 
+    </p>
+  <% end %>
+</div>  

@@ -5,7 +5,8 @@
     <p> 
       • 
       <%= link_to request.requestor.username, profile_path(request.requestor.username) %> &nbsp; &nbsp; &nbsp; 
-      Accept | Decline 
+      <%= link_to "Accept",  friend_request_accept_path(request.id ), method: :post %> | 
+      <%= link_to "Decline", friend_request_decline_path(request.id), method: :post %> 
     </p>
   <% end %>
 </div>  

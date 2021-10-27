@@ -1,6 +1,10 @@
 <div>
   <h3><%= @user.username %>'s profile</h3>
 
+  <% if current_user&.eql? @user %>
+    <%= link_to "Friend Requests List", profile_friend_requests_path(username: @user.username) %>
+  <% end %>
+
   <p>
     <% if current_user&.eql? @user %>
       <%= link_to "Upload photos", new_photo_path %>

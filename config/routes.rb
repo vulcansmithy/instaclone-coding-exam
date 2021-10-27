@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get 'profiles/:username', to: 'profiles#show', as: :profile
 
   ##
-  post "profiles/:username/add_friend", to: "profiles#add_friend", as: :profile_add_friend
+  post "profiles/:username/add_friend",      to: "profiles#add_friend",      as: :profile_add_friend
+  get  "profiles/:username/friend_requests", to: "profiles#friend_requests", as: :profile_friend_requests 
   ##
 
   resources :photos, only: [:index, :show, :new, :create, :destroy]

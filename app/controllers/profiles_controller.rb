@@ -14,4 +14,16 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find_by! username: params[:username]
   end
+
+  def add_friend
+    profile_username = params[:username]
+ 
+    @profile_user = User.where(username: profile_username)&.first
+
+    if @profile_user
+      new_request = FriendshipRequest.new
+      new_request.requestor = current_user
+      @profile_user.friendship_requests << new_request
+    end  
+  end
 end

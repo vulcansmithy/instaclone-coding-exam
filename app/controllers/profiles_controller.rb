@@ -40,7 +40,7 @@ class ProfilesController < ApplicationController
     puts "@DEBUG friend_request_decline Marked"
 
     friend_request = FriendshipRequest.find(params[:friendship_request_id])
-    friend_request.friendship_declined
+    friend_request.friendship_decline
 
     redirect_to profile_path(current_user.username) 
   end 

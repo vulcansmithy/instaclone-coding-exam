@@ -30,7 +30,8 @@ class ProfilesController < ApplicationController
   def friend_request_accept
     puts "@DEBUG friend_request_accept Marked"
 
-    # @TODO
+    friend_request = FriendshipRequest.find(params[:friendship_request_id])
+    friend_request.friendship_accepted 
 
     redirect_to profile_path(current_user.username) 
   end  
@@ -38,7 +39,8 @@ class ProfilesController < ApplicationController
   def friend_request_decline
     puts "@DEBUG friend_request_decline Marked"
 
-    # @TODO
+    friend_request = FriendshipRequest.find(params[:friendship_request_id])
+    friend_request.friendship_declined
 
     redirect_to profile_path(current_user.username) 
   end 

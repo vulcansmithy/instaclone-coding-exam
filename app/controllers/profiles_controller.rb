@@ -26,4 +26,20 @@ class ProfilesController < ApplicationController
       @profile_user.friendship_requests << new_request
     end  
   end
+
+  def friend_request_accept
+    puts "@DEBUG friend_request_accept Marked"
+
+    # @TODO
+
+    redirect_to profile_path(current_user.username) 
+  end  
+
+  def friend_request_decline
+    puts "@DEBUG friend_request_decline Marked"
+
+    # @TODO
+
+    redirect_to profile_path(current_user.username) 
+  end 
 end

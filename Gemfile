@@ -54,5 +54,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 
-gem "aasm" # https://github.com/aasm/aasm
+gem "aasm"                                                                    # https://github.com/aasm/aasm
+gem "acts_as_follower", github: "tcocca/acts_as_follower", branch: "master"   # https://github.com/tcocca/acts_as_follower
+
 

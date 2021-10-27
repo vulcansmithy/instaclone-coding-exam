@@ -14,6 +14,7 @@ class FriendshipRequest < ApplicationRecord
       transitions from: :requested, to: :accepted
 
       after do
+        self.requestor.follow(self.user)
         self.save!
       end
     end  
